@@ -1,5 +1,6 @@
 <template>
   <el-container>
+    <AppLogo />
     <el-header>
       <AppNavigation />
     </el-header>
@@ -10,12 +11,14 @@
   </el-container>
 </template>
 <script>
-import AppNavigation from '@/components/main/Navigation';
+import AppNavigation from '@/components/main/Navigation'
+import AppLogo from '@/components/main/Logo.vue'
 export default {
   components: {
-    AppNavigation
+    AppNavigation,
+    AppLogo
   }
-};
+}
 </script>
 <style>
 </style>
