@@ -1,13 +1,22 @@
 const path = require('path')
+const fs = require('fs')
 const multer = require('multer')
-const moment = require('moment')
+const translit = require('cyrillic-to-translit-js')
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, path.resolve(__dirname, '../..', 'static'))
+    const dirName = translit({ preset: 'ru' })
+      .transform(req.body.title, '_')
+      .toLowerCase()
+    const uploadPath = `./static/${dirName}`
+    if (!fs.existsSync(uploadPath)) {
+      fs.mkdirSync(uploadPath)
+    }
+    cb(null, uploadPath)
   },
   filename(req, file, cb) {
-    cb(null, `${moment().format('DDMMYYYY-HHmmss_SSS')}-${file.originalname}`)
+    const uniqueSuffix = Math.round(Math.random() * 1e9)
+    cb(null, uniqueSuffix + '-' + file.originalname)
   },
 })
 
