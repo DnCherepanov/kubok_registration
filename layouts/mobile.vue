@@ -1,6 +1,6 @@
 <template>
-  <div class="bkgMobile">
-    <div class="container">
+  <div class="bkgMobile page-animation">
+    <div v-if="height > 0" :style="{ height: height + 'px' }" class="container">
       <section class="logoArea">
         <div class="logo">
           <Logo />
@@ -33,6 +33,31 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      height: 0,
+    }
+  },
+  created() {
+    if (process.client) {
+      window.addEventListener('resize', this.handleResize)
+      this.handleResize()
+    }
+  },
+  destroyed() {
+    if (process.client) {
+      window.removeEventListener('resize', this.handleResize)
+    }
+  },
+  methods: {
+    handleResize() {
+      this.height = window.innerHeight
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .bkgMobile {
@@ -42,7 +67,7 @@
 .container {
   display: grid;
   grid-template-rows: 30% 2fr 2fr;
-  height: 100vh;
+  max-height: 100vh;
 }
 .logoArea {
   justify-self: center;
