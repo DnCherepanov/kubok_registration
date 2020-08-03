@@ -1,35 +1,41 @@
 <template>
-  <div>
-    <h1>Аналитика по постам</h1>
-    <app-analytics-chart
-      title="Количество просмотров"
-      :labels="views.labels"
-      :data="views.data"
-    />
-
-    <app-analytics-chart
-      title="Количество комментариев"
-      :labels="comments.labels"
-      :data="comments.data"
-    />
-  </div>
+  <el-table :data="participants" style="width: 100%;">
+    <el-table-column prop="name" label="ФИО"> </el-table-column>
+    <el-table-column label="Дата рождения">
+      <template slot-scope="{ row: { date } }">
+        <i class="el-icon-date"></i>
+        <span style="margin-left: 10px;">{{ date | date('date') }}</span>
+      </template>
+    </el-table-column>
+    <el-table-column label="Телефон">
+      <template slot-scope="{ row: { phone } }">
+        <i class="el-icon-phone"></i>
+        <span style="margin-left: 10px;">{{ phone }}</span>
+      </template>
+    </el-table-column>
+    <el-table-column label="Дисциплина">
+      <template slot-scope="{ row: { type } }">
+        <i class="el-icon-star-on"></i>
+        <span style="margin-left: 10px; word-break: break-word;">{{
+          type.join(', ')
+        }}</span>
+      </template>
+    </el-table-column>
+    <el-table-column prop="partner" label="Партнер"> </el-table-column>
+  </el-table>
 </template>
 
 <script>
-import AppAnalyticsChart from '@/components/admin/AnalyticsChart.vue'
 export default {
   layout: 'admin',
   middleware: ['admin-auth'],
   head: {
-    title: `Аналитика | ${process.env.appName}`
+    title: `Аналитика | ${process.env.appName}`,
   },
   async asyncData({ store }) {
-    const { views, comments } = await store.dispatch('post/getAnalytics')
-    return { views, comments }
+    const participants = await store.dispatch('participant/fetchAdmin')
+    return { participants }
   },
-  components: { AppAnalyticsChart }
 }
 </script>
 
-<style lang="scss" scoped>
-</style>

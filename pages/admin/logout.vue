@@ -1,7 +1,5 @@
 <template>
-  <div>
-    Очищаем данные
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -11,9 +9,6 @@ export default {
   beforeCreate() {
     this.$store.dispatch('auth/logout')
     this.$router.push('/admin/login?message=logout')
-  }
+  },
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

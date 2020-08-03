@@ -1,5 +1,6 @@
-export default function({ $axios, redirect, store }) {
-  $axios.interceptors.request.use((request) => {
+export default function ({ $axios, redirect, store }) {
+
+  $axios.interceptors.request.use(request => {
     if (store.getters['auth/isAuthenticated'] && !request.headers.common['Authorization']) {
       const token = store.getters['auth/token']
       request.headers.common['Authorization'] = `Bearer ${token}`
@@ -8,7 +9,7 @@ export default function({ $axios, redirect, store }) {
     return request
   })
 
-  $axios.onError((error) => {
+  $axios.onError(error => {
     if (error.response) {
       if (error.response.status === 401) {
         redirect('/admin/login?message=session')

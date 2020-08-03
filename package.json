@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-blog",
+  "name": "kubok",
   "version": "1.0.0",
-  "description": "My blog",
+  "description": "кубок мэра Южно-Сахалинска по теннису",
   "author": "Denis Cherepanov",
   "private": true,
   "scripts": {
@@ -15,32 +15,28 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/device": "^1.2.7",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
-    "chart.js": "^2.9.3",
-    "cookie": "^0.4.1",
-    "cross-env": "^5.2.0",
-    "cyrillic-to-translit-js": "^3.1.0",
-    "element-ui": "^2.4.11",
-    "express": "^4.16.4",
+    "cookie": "^0.3.1",
+    "cross-env": "^5.2.1",
+    "element-ui": "^2.13.2",
+    "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.26.0",
-    "mongoose": "^5.9.19",
-    "multer": "^1.4.2",
-    "nuxt": "^2.0.0",
+    "mongoose": "^5.9.27",
+    "nuxt": "^2.14.0",
+    "nuxt-font-loader-strategy": "^1.1.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "vue-chartjs": "^3.5.0",
-    "vue-markdown": "^2.2.4"
+    "v-mask": "^2.2.3"
   },
   "devDependencies": {
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "fs": "0.0.1-security",
     "node-sass": "^4.14.1",
-    "nodemon": "^1.18.9",
-    "sass-loader": "^8.0.2"
+    "nodemon": "^2.0.4",
+    "sass-loader": "^7.3.1"
   }
 }

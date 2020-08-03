@@ -1,0 +1,238 @@
+<template>
+  <div>
+    <el-button :class="buttonClass" round @click="dialog = true">
+      Принять участие
+    </el-button>
+    <el-drawer
+      title="Заполните форму на участие"
+      ref="drawer"
+      :visible.sync="dialog"
+      :direction="drawerDirection"
+      :size="drawerSize"
+      :with-header="witdhHeader"
+    >
+      <div class="drawer__content">
+        <el-form
+          ref="form"
+          :model="controls"
+          :rules="rules"
+          :label-position="labelPosition"
+        >
+          <el-form-item label="ФИО" prop="name" :label-width="formLabelWidth">
+            <el-input
+              v-model="controls.name"
+              placeholder="Иванов Иван Иванович"
+            >
+              <i slot="prefix" class="el-input__icon el-icon-user"></i>
+            </el-input>
+          </el-form-item>
+          <el-col :md="12" :span="24">
+            <el-form-item
+              label="Дата рождения"
+              prop="date"
+              :label-width="formLabelWidth"
+            >
+              <el-date-picker
+                v-model="controls.date"
+                type="date"
+                placeholder="1989-08-07"
+              >
+              </el-date-picker>
+            </el-form-item>
+          </el-col>
+          <el-col :md="12" :span="24">
+            <el-form-item label="Телефон" prop="phone">
+              <el-input
+                v-model="controls.phone"
+                v-mask="'+7(###)-###-####'"
+                placeholder="+7 (---) --- ----"
+              >
+                <i slot="prefix" class="el-input__icon el-icon-phone"></i>
+              </el-input>
+            </el-form-item>
+          </el-col>
+          <el-form-item label="Спортивная дисциплина" prop="type">
+            <el-checkbox-group v-model="controls.type">
+              <el-checkbox label="Одиночный разряд" name="type"></el-checkbox>
+              <el-checkbox label="Парный разряд" name="type"></el-checkbox>
+              <el-checkbox label="Смешаннай разряд" name="type"></el-checkbox>
+            </el-checkbox-group>
+          </el-form-item>
+
+          <el-form-item
+            label="Партнер"
+            prop="partner"
+            :label-width="formLabelWidth"
+          >
+            <el-input
+              v-model="controls.partner"
+              placeholder="Иванов Иван Иванович"
+            >
+              <i slot="prefix" class="el-input__icon el-icon-user"></i>
+            </el-input>
+          </el-form-item>
+        </el-form>
+
+        <div class="drawer__footer">
+          <el-button round @click="resetForm()">Сбросить</el-button>
+          <el-button round type="primary" :loading="loading" @click="onSubmit()"
+            >{{ loading ? 'Отправляю ...' : 'Отправить' }}
+          </el-button>
+        </div>
+      </div>
+    </el-drawer>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    drawerDirection: {
+      type: String,
+      default: 'ltr',
+    },
+    drawerSize: {
+      type: String,
+      default: '40%',
+    },
+    witdhHeader: {
+      type: Boolean,
+      default: false,
+    },
+    buttonClass: {
+      type: String,
+      default: 'button',
+    },
+  },
+  data() {
+    return {
+      dialog: false,
+      loading: false,
+      labelPosition: 'top',
+      formLabelWidth: 'auto',
+      myInputModel: '',
+      controls: {
+        name: '',
+        date: '',
+        phone: '',
+        type: [],
+        partner: '',
+      },
+      rules: {
+        name: [
+          {
+            required: true,
+            message: 'Поле не может быть пустым',
+            trigger: 'blur',
+          },
+        ],
+        date: [
+          {
+            required: true,
+            message: 'Поле не может быть пустым',
+            trigger: 'blur',
+          },
+        ],
+        phone: [
+          {
+            required: true,
+            message: 'Поле не может быть пустым',
+            trigger: 'blur',
+          },
+        ],
+        type: [
+          {
+            required: true,
+            message: 'Выберите дисциплину',
+            trigger: 'blur',
+          },
+        ],
+      },
+    }
+  },
+  methods: {
+    onSubmit() {
+      this.$refs.form.validate(async (valid) => {
+        if (valid) {
+          this.loading = true
+
+          const formData = {
+            name: this.controls.name,
+            date: this.controls.date,
+            phone: this.controls.phone,
+            type: this.controls.type,
+            partner: this.controls.partner,
+          }
+
+          try {
+            const participant = await this.$store.dispatch(
+              'participant/create',
+              formData
+            )
+
+            this.$emit('created', participant)
+          } catch (e) {
+            this.loading = false
+          }
+          this.dialog = false
+          this.$message({
+            offset: '0',
+            duration: '4000',
+            message: 'Ваша заявка принята',
+            type: 'success',
+          })
+        }
+      })
+    },
+    resetForm() {
+      this.$refs.form.resetFields()
+    },
+  },
+}
+</script>
+
+
+<style lang="scss" scoped>
+.button {
+  border-radius: 35px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 50px;
+  font-size: 15px;
+  background: none;
+}
+
+.button:hover {
+  color: #000;
+  background-color: #fff;
+}
+.button-mobile {
+  border-radius: 35px;
+  border: 1px solid #333;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  font-weight: normal;
+  background: none;
+}
+.drawer__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 40px;
+  overflow: scroll;
+}
+.drawer__content form {
+  flex: 1;
+}
+.drawer__footer {
+  display: flex;
+  margin-top: 20px;
+}
+.drawer__footer button {
+  flex: 1;
+}
+</style>
+
+

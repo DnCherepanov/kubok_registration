@@ -27,17 +27,17 @@
 
 <script>
 export default {
-  layout: 'admin',
+  layout: 'empty',
   middleware: ['admin-auth'],
   head: {
-    title: `Создать пользователя | ${process.env.appName}`
+    title: `Создать пользователя | ${process.env.appName}`,
   },
   data() {
     return {
       loading: false,
       controls: {
         login: '',
-        password: ''
+        password: '',
       },
       rules: {
         login: [{ required: true, message: 'Введите логин', trigger: 'blur' }],
@@ -46,22 +46,22 @@ export default {
           {
             min: 6,
             message: 'Пароль должен быть не менее 6 символов',
-            trigger: 'blur'
-          }
-        ]
-      }
+            trigger: 'blur',
+          },
+        ],
+      },
     }
   },
   methods: {
     onSubmit() {
-      this.$refs.form.validate(async valid => {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.loading = true
 
           try {
             const formData = {
               login: this.controls.login,
-              password: this.controls.password
+              password: this.controls.password,
             }
 
             await this.$store.dispatch('auth/createUser', formData)
@@ -74,8 +74,8 @@ export default {
           }
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

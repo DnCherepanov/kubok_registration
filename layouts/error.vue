@@ -7,25 +7,23 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
-.error-layout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.error-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4rem;
-}
-.error-title {
-  color: red;
-  margin-bottom: 1rem;
-}
+  .error-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+  }
+
+  .error-title {
+    color: rgb(145, 6, 6);
+    margin-bottom: 1rem;
+  }
 </style>

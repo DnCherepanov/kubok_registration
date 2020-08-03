@@ -1,26 +1,21 @@
 <template>
-  <el-row type="flex" justify="center">
-    <el-col :xs="24" :sm="18" :md="12" :lg="10">
-      <app-post v-for="post in posts" :key="post._id" :post="post" />
-    </el-col>
-  </el-row>
+  <p>
+    Традиционные ежегодные соревнования по большому теннису на Кубок мэра
+    Южно-Сахалинска.<br />Турнир проходит на теннисных кортах городского парка
+    культуры и отдыха им. Ю.Гагарина.<br />
+    Регистрация участников заканчивается 15 августа.
+  </p>
 </template>
 
 <script>
-import AppPost from '@/components/main/post.vue'
 export default {
+  layout: (ctx) => (ctx.isMobile ? 'mobile' : 'default'),
   head: {
-    title: `Главная | ${process.env.appName}`
+    title: `${process.env.appName}`,
+    description: `кубок мэра Южно-Сахалинска по теннису`,
   },
-  async asyncData({ store }) {
-    const posts = await store.dispatch('post/fetch')
-    return { posts }
-  },
-  components: {
-    AppPost
-  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 </style>

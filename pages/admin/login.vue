@@ -6,8 +6,6 @@
       ref="form"
       @submit.native.prevent="onSubmit"
     >
-      <h2>Войти в панель администратора</h2>
-
       <el-form-item label="Логин" prop="login">
         <el-input v-model.trim="controls.login" />
       </el-form-item>
@@ -31,14 +29,14 @@
 export default {
   layout: 'empty',
   head: {
-    title: `Вход в панель администратора | ${process.env.appName}`
+    title: `Вход в панель администратора | ${process.env.appName}`,
   },
   data() {
     return {
       loading: false,
       controls: {
         login: '',
-        password: ''
+        password: '',
       },
       rules: {
         login: [{ required: true, message: 'Введите логин', trigger: 'blur' }],
@@ -47,10 +45,10 @@ export default {
           {
             min: 6,
             message: 'Пароль должен быть не менее 6 символов',
-            trigger: 'blur'
-          }
-        ]
-      }
+            trigger: 'blur',
+          },
+        ],
+      },
     }
   },
   mounted() {
@@ -70,14 +68,14 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$refs.form.validate(async valid => {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
           this.loading = true
 
           try {
             const formData = {
               login: this.controls.login,
-              password: this.controls.password
+              password: this.controls.password,
             }
 
             await this.$store.dispatch('auth/login', formData)
@@ -87,7 +85,7 @@ export default {
           }
         }
       })
-    }
-  }
+    },
+  },
 }
 </script>
