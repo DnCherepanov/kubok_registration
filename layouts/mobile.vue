@@ -86,7 +86,7 @@ export default {
   font-weight: 100;
   font-size: 26px;
   text-align: center;
-  padding-top: 14%;
+  padding-top: 20%;
 }
 .buttonArea {
   background-color: #fff;
@@ -99,7 +99,7 @@ export default {
   align-self: baseline;
   text-align: center;
   font-size: 11px;
-  padding: 0 15px;
+  padding: 0 20px;
   color: #333;
   letter-spacing: 1px;
   line-height: 1.5;

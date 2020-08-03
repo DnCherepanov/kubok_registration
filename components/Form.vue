@@ -220,7 +220,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 40px;
+  padding: 40px 40px 60px;
   overflow: scroll;
 }
 .drawer__content form {
