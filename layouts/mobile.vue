@@ -14,9 +14,7 @@
           <ball />
         </div>
         <div>
-          <h2>
-            15 Августа 2020
-          </h2>
+          <h2>15 Августа 2020</h2>
         </div>
       </section>
       <section class="buttonArea">
