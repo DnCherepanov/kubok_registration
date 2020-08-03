@@ -1,6 +1,6 @@
 <template>
   <div class="bkgMobile page-animation">
-    <div v-if="height > 0" :style="{ height: height + 'px' }" class="container">
+    <div :style="{ height: height + 'px' }" class="container">
       <section class="logoArea">
         <div class="logo">
           <Logo />
