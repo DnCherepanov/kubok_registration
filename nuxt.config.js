@@ -4,7 +4,7 @@ module.exports = {
   mode: 'universal',
 
   head: {
-    title: pkg.name,
+    title: 'Кубок мэра 2020',
     meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: pkg.description }],
     link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   },
@@ -18,6 +18,7 @@ module.exports = {
   components: true,
 
   modules: [
+    '@nuxtjs/proxy',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/device',
@@ -46,7 +47,11 @@ module.exports = {
     ],
   ],
 
-  axios: { baseURL: process.env.BASE_URL || 'http://localhost:3000' },
+  axios: {
+    proxy: true,
+    https: true,
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+  },
 
   env: {
     appName: 'Кубок мэра 2020',
