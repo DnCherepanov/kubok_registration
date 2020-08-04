@@ -1,5 +1,6 @@
 <template>
-  <el-card shadow="always" :style="{ width: '500px' }">
+  <el-card shadow="never" class="hulf" :class="{ full: $device.isMobile }">
+    <h2 class="mb">Войти в систему</h2>
     <el-form
       :model="controls"
       :rules="rules"
@@ -28,6 +29,7 @@
 <script>
 export default {
   layout: 'empty',
+
   head: {
     title: `Вход в панель администратора | ${process.env.appName}`,
   },
@@ -51,6 +53,7 @@ export default {
       },
     }
   },
+
   mounted() {
     const { message } = this.$route.query
 
@@ -89,3 +92,14 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.hulf {
+  width: 500px;
+}
+.full {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+</style>

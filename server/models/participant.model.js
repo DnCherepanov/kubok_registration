@@ -16,7 +16,10 @@ const participantSchema = new Schema({
   type: {
     type: Array,
   },
-  partner: {
+  partner1: {
+    type: String,
+  },
+  partner2: {
     type: String,
   },
 })

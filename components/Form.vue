@@ -26,51 +26,79 @@
               <i slot="prefix" class="el-input__icon el-icon-user"></i>
             </el-input>
           </el-form-item>
-          <el-col :md="12" :span="24">
-            <el-form-item
-              label="Дата рождения"
-              prop="date"
-              :label-width="formLabelWidth"
-            >
-              <el-date-picker
-                v-model="controls.date"
-                type="date"
-                placeholder="1989-08-07"
+          <el-row :gutter="20">
+            <el-col :md="12" :span="24">
+              <el-form-item
+                label="Дата рождения"
+                prop="date"
+                :label-width="formLabelWidth"
               >
-              </el-date-picker>
-            </el-form-item>
-          </el-col>
-          <el-col :md="12" :span="24">
-            <el-form-item label="Телефон" prop="phone">
-              <el-input
-                v-model="controls.phone"
-                v-mask="'+7(###)-###-####'"
-                placeholder="+7 (---) --- ----"
-              >
-                <i slot="prefix" class="el-input__icon el-icon-phone"></i>
-              </el-input>
-            </el-form-item>
-          </el-col>
+                <el-date-picker
+                  v-model="controls.date"
+                  type="date"
+                  placeholder="08/07/1989"
+                  default-value="07/08/1989"
+                  format="dd/MM/yyyy"
+                  value-format="dd/MM/yyyy"
+                >
+                </el-date-picker>
+              </el-form-item>
+            </el-col>
+            <el-col :md="12" :span="24">
+              <el-form-item label="Телефон" prop="phone">
+                <el-input
+                  v-model="controls.phone"
+                  v-mask="'+7 (###)-###-####'"
+                  placeholder="+7 (---) --- ----"
+                >
+                  <i slot="prefix" class="el-input__icon el-icon-phone"></i>
+                </el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
           <el-form-item label="Спортивная дисциплина" prop="type">
             <el-checkbox-group v-model="controls.type">
               <el-checkbox label="Одиночный разряд" name="type"></el-checkbox>
               <el-checkbox label="Парный разряд" name="type"></el-checkbox>
-              <el-checkbox label="Смешаннай разряд" name="type"></el-checkbox>
+              <el-checkbox label="Смешанный разряд" name="type"></el-checkbox>
             </el-checkbox-group>
           </el-form-item>
-
-          <el-form-item
-            label="Партнер"
-            prop="partner"
-            :label-width="formLabelWidth"
-          >
-            <el-input
-              v-model="controls.partner"
-              placeholder="Иванов Иван Иванович"
-            >
-              <i slot="prefix" class="el-input__icon el-icon-user"></i>
-            </el-input>
-          </el-form-item>
+          <el-row :gutter="20">
+            <el-col :md="12" :span="24">
+              <el-form-item
+                label="Партнер (парный разряд)"
+                prop="partner1"
+                :label-width="formLabelWidth"
+              >
+                <el-input
+                  v-model="controls.partner1"
+                  placeholder="Иванов Иван Иванович"
+                >
+                  <i
+                    slot="prefix"
+                    class="el-input__icon el-icon-user-solid"
+                  ></i>
+                </el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :md="12" :span="24">
+              <el-form-item
+                label="Партнер (смешанный разряд)"
+                prop="partner2"
+                :label-width="formLabelWidth"
+              >
+                <el-input
+                  v-model="controls.partner2"
+                  placeholder="Иванов Иван Иванович"
+                >
+                  <i
+                    slot="prefix"
+                    class="el-input__icon el-icon-user-solid"
+                  ></i>
+                </el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
         </el-form>
 
         <div class="drawer__footer">
@@ -116,7 +144,8 @@ export default {
         date: '',
         phone: '',
         type: [],
-        partner: '',
+        partner1: '',
+        partner2: '',
       },
       rules: {
         name: [
@@ -161,7 +190,8 @@ export default {
             date: this.controls.date,
             phone: this.controls.phone,
             type: this.controls.type,
-            partner: this.controls.partner,
+            partner1: this.controls.partner1,
+            partner2: this.controls.partner2,
           }
 
           try {

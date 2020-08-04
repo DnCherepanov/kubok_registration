@@ -7,6 +7,14 @@
   outline: none;
 }
 
+.mb {
+  margin-bottom: 1rem;
+}
+
+.mb2 {
+  margin-bottom: 2rem;
+}
+
 html,
 body {
   font-family: 'Helvetica Neue', Helvetica, 'Arial', sans-serif;
@@ -41,6 +49,15 @@ button {
   align-items: center;
 }
 
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
 .page-animation {
   animation: 1s appear;
 }
@@ -50,14 +67,7 @@ button {
     opacity: 0;
   }
 }
-.layout-enter-active,
-.layout-leave-active {
-  transition: opacity 5.5s;
-}
-.layout-enter,
-.layout-leave-active {
-  opacity: 0;
-}
+
 .counter-animation {
   animation: 1s slideUp;
   animation-fill-mode: forwards;

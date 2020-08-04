@@ -21,7 +21,10 @@
         }}</span>
       </template>
     </el-table-column>
-    <el-table-column prop="partner" label="Партнер"> </el-table-column>
+    <el-table-column prop="partner1" label="Партнер (парный разряд)">
+    </el-table-column>
+    <el-table-column prop="partner2" label="Партнер (смешанный разряд)">
+    </el-table-column>
   </el-table>
 </template>
 

@@ -63,7 +63,7 @@
   justify-self: center;
   align-self: center;
 }
-.introArea__nested p {
+.introArea__nested > div {
   margin-left: 12%;
   font-size: 15px;
   color: #fff;

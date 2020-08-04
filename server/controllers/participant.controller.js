@@ -15,7 +15,8 @@ module.exports.create = async (req, res) => {
     date: req.body.date,
     phone: req.body.phone,
     type: req.body.type,
-    partner: req.body.partner,
+    partner1: req.body.partner1,
+    partner2: req.body.partner2,
   })
 
   try {
