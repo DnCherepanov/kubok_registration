@@ -14,7 +14,7 @@
           <ball />
         </div>
         <div>
-          <h2>15 Августа 2020</h2>
+          <h2>Старт турнира<br /><strong>15 Августа 2020</strong></h2>
         </div>
       </section>
       <section class="buttonArea">
@@ -84,14 +84,20 @@ export default {
 .mainArea h2 {
   transform: rotate(-26deg);
   font-weight: 100;
-  font-size: 26px;
+  font-size: 22px;
   text-align: center;
   padding-top: 20%;
+  padding-right: 5%;
+  letter-spacing: 1px;
 }
+strong {
+  font-weight: 400;
+}
+
 .buttonArea {
   background-color: #fff;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 40% 1fr;
   justify-items: center;
   align-items: center;
 }

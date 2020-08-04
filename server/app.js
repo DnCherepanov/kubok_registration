@@ -9,7 +9,7 @@ const keys = require('./keys')
 const app = express()
 
 mongoose
-  .connect(keys.MONGO_URI, { useNewUrlParser: true })
+  .connect(keys.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => console.log('MongoDB connected...'))
   .catch((error) => console.error(error))
 

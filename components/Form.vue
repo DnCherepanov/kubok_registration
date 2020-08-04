@@ -39,7 +39,6 @@
                   placeholder="08/07/1989"
                   default-value="07/08/1989"
                   format="dd/MM/yyyy"
-                  value-format="dd/MM/yyyy"
                 >
                 </el-date-picker>
               </el-form-item>
@@ -205,6 +204,8 @@ export default {
             this.loading = false
           }
           this.dialog = false
+          this.loading = false
+          this.$refs.form.resetFields()
           this.$message({
             offset: '0',
             duration: '4000',

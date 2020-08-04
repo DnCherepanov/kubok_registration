@@ -49,6 +49,11 @@ button {
   align-items: center;
 }
 
+.el-dialog__headerbtn {
+  min-height: 20px;
+  padding: 5px;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: opacity 0.4s;
