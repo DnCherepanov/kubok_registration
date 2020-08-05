@@ -11,7 +11,30 @@ module.exports = {
 
   loading: { color: '#409EFF' },
 
-  css: ['element-ui/lib/theme-chalk/index.css', '@/theme/index.scss'],
+  css: [
+    './node_modules/element-ui/packages/theme-chalk/src/base.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/button.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/checkbox.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/checkbox-group.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/dialog.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/drawer.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/form-item.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/date-picker.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/form.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/input.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/icon.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/card.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/table.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/table-column.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/row.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/col.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/container.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/header.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/link.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/main.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/message.scss',
+    '@/theme/index.scss',
+  ],
 
   plugins: ['@/plugins/globals', '@/plugins/axios'],
 
@@ -28,7 +51,6 @@ module.exports = {
         ignoreLighthouse: true,
         ignoredEffectiveTypes: ['2g', 'slow-2g'],
         fonts: [
-          // Bebas
           {
             fileExtensions: ['woff'],
             fontFamily: 'Bebas',

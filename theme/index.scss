@@ -51,7 +51,12 @@ button {
 
 .el-dialog__headerbtn {
   min-height: 20px;
-  padding: 5px;
+  padding: 1px;
+  font-size: 20px;
+}
+
+.el-table .cell {
+  word-break: break-word;
 }
 
 .page-enter-active,

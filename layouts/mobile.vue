@@ -64,7 +64,7 @@ export default {
 }
 .container {
   display: grid;
-  grid-template-rows: 30% 2fr 2fr;
+  grid-template-rows: 30% 30% 40%;
   max-height: 100vh;
 }
 .logoArea {
@@ -114,5 +114,21 @@ strong {
 .logo svg {
   width: 40vw;
   max-width: 150px;
+}
+
+@media (orientation: landscape) {
+  .container {
+    grid-template-rows: none;
+    grid-template-columns: 3fr 1fr 4fr;
+  }
+  .mainArea {
+    display: block;
+    grid-template-columns: none;
+    justify-self: end;
+    align-self: end;
+  }
+  .mainArea h2 {
+    display: none;
+  }
 }
 </style>

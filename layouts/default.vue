@@ -80,7 +80,6 @@
 }
 .introArea {
   display: grid;
-  grid-template-rows: 48% 1fr;
   grid-template-columns: 1fr;
 }
 .introArea__nested {
