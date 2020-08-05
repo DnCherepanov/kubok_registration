@@ -1,7 +1,7 @@
 {
   "name": "kubok",
   "version": "1.0.0",
-  "description": "кубок мэра Южно-Сахалинска по теннису",
+  "description": "Традиционные соревнования по большому теннису на кубок мэра Южно-Сахалинска",
   "author": "Denis Cherepanov",
   "private": true,
   "scripts": {

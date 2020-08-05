@@ -4,8 +4,13 @@ module.exports = {
   mode: 'universal',
 
   head: {
-    title: 'Кубок мэра 2020',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: pkg.description }],
+    title: 'Kубок мэра Южно-Сахалинска 2020',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=0' },
+      { hid: 'description', name: 'description', content: pkg.description },
+      { name: 'yandex-verification', content: '571606ada5a71f33' },
+    ],
     link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   },
 
