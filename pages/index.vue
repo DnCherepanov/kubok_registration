@@ -31,7 +31,12 @@
         "Хоккайдо".
       </p>
       <div>
-        <video controls src="~assets/kubok_tv.mp4">
+        <video
+          controls
+          preload="none"
+          poster="poster_tv.png"
+          src="~assets/kubok_tv.mp4"
+        >
           <p>Your browser does not support the video tag.</p>
         </video>
       </div>
