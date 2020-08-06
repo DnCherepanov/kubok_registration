@@ -55,6 +55,7 @@
               </el-form-item>
             </el-col>
           </el-row>
+
           <el-form-item label="Спортивная дисциплина" prop="type">
             <el-checkbox-group v-model="controls.type">
               <el-checkbox label="Одиночный разряд" name="type"></el-checkbox>
@@ -99,6 +100,38 @@
             </el-col>
           </el-row>
         </el-form>
+        <div class="form__info">
+          <p class="el-icon-warning-outline" style="font-size: 15px;">
+            Информация по категориям взрослого турнира.
+          </p>
+          <blockquote>
+            <ul>
+              <li>
+                Женский одиночный турнир 18-49 лет
+              </li>
+              <li>
+                Женский одиночный турнир 50 лет и старше
+              </li>
+              <li>
+                Женская пара от 18 лет и старше
+              </li>
+              <li>
+                Мужской одиночный турнир 18-49 лет
+              </li>
+              <li>
+                Мужской одиночный турнир 50 лет и старше
+              </li>
+              <li>
+                Мужской одиночный турнир (продвинутый уровень игры) от 18 лет и
+                старше - тренеры, инструкторы, игроки принимающее участие во
+                всероссийский соревнованиях, опытные игроки
+              </li>
+              <li>
+                Смешанная пара от 18 лет и старше
+              </li>
+            </ul>
+          </blockquote>
+        </div>
 
         <div class="drawer__footer">
           <el-button round @click="resetForm()">Сбросить</el-button>
@@ -263,6 +296,18 @@ export default {
 }
 .drawer__footer button {
   flex: 1;
+}
+.form__info {
+  padding: 20px;
+  background-color: #ecf8ff;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #5e6d82;
+  line-height: 1.5em;
+}
+.form__info ul {
+  margin: 10px 0;
+  padding-left: 20px;
 }
 </style>
 

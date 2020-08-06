@@ -49,6 +49,7 @@ module.exports = {
     '@nuxtjs/proxy',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/robots',
     '@nuxtjs/device',
     [
       'nuxt-font-loader-strategy',
@@ -80,11 +81,17 @@ module.exports = {
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
   },
 
+  robots: {
+    UserAgent: '*',
+    Disallow: '/',
+  },
+
   env: {
     appName: 'Кубок мэра 2020',
   },
 
   build: {
+    analyze: true,
     transpile: [/^element-ui/],
     extend(config, ctx) {},
   },
