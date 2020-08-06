@@ -30,6 +30,11 @@
         Южно-Сахалинска при поддержке администрации парка и теннисного клуба
         "Хоккайдо".
       </p>
+      <div>
+        <video controls src="~assets/kubok_tv.mp4">
+          <p>Your browser does not support the video tag.</p>
+        </video>
+      </div>
       <p class="info">
         Соревнования будут проходить в два этапа:
       </p>
@@ -98,5 +103,10 @@ h4 {
 }
 .el-drawer__body {
   padding: 30px;
+}
+video {
+  margin-bottom: 10px;
+  width: 100%;
+  height: auto;
 }
 </style>

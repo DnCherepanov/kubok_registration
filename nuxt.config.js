@@ -87,7 +87,7 @@ module.exports = {
   },
 
   env: {
-    appName: 'Кубок мэра 2020',
+    appName: 'Kубок мэра Южно-Сахалинска 2020',
   },
 
   build: {
