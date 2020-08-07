@@ -38,6 +38,8 @@ module.exports = {
     './node_modules/element-ui/packages/theme-chalk/src/link.scss',
     './node_modules/element-ui/packages/theme-chalk/src/main.scss',
     './node_modules/element-ui/packages/theme-chalk/src/message.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/tabs.scss',
+    './node_modules/element-ui/packages/theme-chalk/src/tab-pane.scss',
     '@/theme/index.scss',
   ],
 
@@ -83,7 +85,7 @@ module.exports = {
 
   robots: {
     UserAgent: '*',
-    Disallow: '/',
+    Disallow: '/admin',
   },
 
   env: {

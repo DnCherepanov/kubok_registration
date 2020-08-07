@@ -1,5 +1,28 @@
 import Vue from 'vue'
-import { Button, Checkbox, CheckboxGroup, Dialog, Drawer, Form, FormItem, DatePicker, Input, Icon, Card, Table, TableColumn, Row, Col, Container, Header, Link, Message, Main } from 'element-ui'
+import {
+  Button,
+  Checkbox,
+  CheckboxGroup,
+  Dialog,
+  Drawer,
+  Form,
+  FormItem,
+  DatePicker,
+  Input,
+  Icon,
+  Card,
+  Table,
+  TableColumn,
+  Row,
+  Col,
+  Container,
+  Header,
+  Link,
+  Message,
+  Main,
+  Tabs,
+  TabPane,
+} from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/ru-RU'
 import locale from 'element-ui/lib/locale'
 import DateFilter from '@/common/date.filter'
@@ -27,5 +50,7 @@ Vue.component(Container.name, Container)
 Vue.component(Header.name, Header)
 Vue.component(Link.name, Link)
 Vue.component(Main.name, Main)
+Vue.component(Tabs.name, Tabs)
+Vue.component(TabPane.name, TabPane)
 
 Vue.prototype.$message = Message
