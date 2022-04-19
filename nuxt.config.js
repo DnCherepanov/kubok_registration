@@ -93,7 +93,6 @@ module.exports = {
   },
 
   build: {
-    analyze: true,
     transpile: [/^element-ui/],
     extend(config, ctx) {},
   },
