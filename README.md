@@ -4,7 +4,7 @@
 
 # Используемые технологии
 
-> Nuxt.js, Express.js, Mongoose.js, MongoDB.
+> Nuxt.js, Vue.js, Express.js, Mongoose.js, MongoDB.
 
 
 ## Build Setup
