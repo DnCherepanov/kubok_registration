@@ -1,6 +1,13 @@
-# nuxt-blog
+# Система учета участников соревнований по теннису
 
-> My awesome nuxt fullstack blog
+> Форма регистрации и административная панель для контроля и корректировки данных.
+
+![Screenshot](screenshot.png)
+
+# Используемые технологии
+
+> Nuxt.js, Vue.js, Express.js, Mongoose.js, MongoDB.
+
 
 ## Build Setup
 

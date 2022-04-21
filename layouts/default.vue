@@ -28,8 +28,8 @@
         </div>
         <div class="mainArea__nested">
           <Counter
-            :year="2020"
-            :month="7"
+            :year="2022"
+            :month="5"
             :date="15"
             :hour="9"
             :minute="0"

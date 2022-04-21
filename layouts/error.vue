@@ -1,29 +1,14 @@
 <template>
-  <div class="error-layout">
-    <div class="error-content">
-      <h1 class="error-title">Ошибка 404</h1>
-      <nuxt-link to="/">Вернуться на главную</nuxt-link>
-    </div>
+  <div>
+    <h1 v-if="error.statusCode === 404">Page not found</h1>
+    <h1 v-else>An error occurred</h1>
+    <NuxtLink to="/">Home page</NuxtLink>
   </div>
 </template>
 
-<style lang="scss" scoped>
-  .error-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+<script>
+  export default {
+    props: ['error'],
+    layout: 'error' // you can set a custom layout for the error page
   }
-
-  .error-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 4rem;
-  }
-
-  .error-title {
-    color: rgb(145, 6, 6);
-    margin-bottom: 1rem;
-  }
-</style>
+</script>
