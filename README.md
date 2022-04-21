@@ -2,6 +2,8 @@
 
 > Форма регистрации и административная панель для контроля и корректировки данных.
 
+![Screenshot](screenshot.png)
+
 # Используемые технологии
 
 > Nuxt.js, Vue.js, Express.js, Mongoose.js, MongoDB.
